@@ -1560,10 +1560,10 @@
 						    var url = "https://script.google.com/macros/s/AKfycbw7KfEQMFWiAl5lIIggDpgRH2PVtDTgIDmg-Kj0PBVlCGyzmIdwH2H3WGTnNRuHipVlZQ/exec?gid=0&email=" + email;
 						    fetch(url)
 						      .then(response => {
-						        // Handle response from webhook if needed
+						        console.log("success:", response);
 						      })
 						      .catch(error => {
-						        // Handle error if fetch fails
+						        console.log("Error:" + err);
 						      });
 						  }
 						</script>
