@@ -1555,22 +1555,24 @@
 							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 						</button>
 						<script>
-					    async function runWebhook() {
-					      var email = document.getElementById("emailInput").value;
-					      var url = "https://tinyurl.com/mr3dbcvs?gid=0&email=" + email; //use https://tinyurl.com to minify google macro script url and avoid error with adblock filters 
-					      try {
-					        const response = await fetch(url, {
-					          method: 'POST',
-					          headers: {
-					            'Content-Type': 'text/plain;charset=utf-8'
-					          }
-					        });
-					        console.log("success:", response);
-					      } catch (error) {
-					        console.log("Error:" + error);
-					      }
-					    }
-					  </script>
+			        function runWebhook() {
+			            var email = document.getElementById("emailInput").value;
+			            var url = "https://tinyurl.com/mr3dbcvs?gid=0&email=" + email; //use https://tinyurl.com to minify google macro script url and avoid error with adblock filters
+			            var xhr = new XMLHttpRequest();
+			            xhr.open("POST", url, true);
+			            xhr.setRequestHeader("Content-Type", "text/plain;charset=utf-8");
+			            xhr.onreadystatechange = function() {
+			                if (xhr.readyState === 4) {
+			                    if (xhr.status === 200) {
+			                        console.log("success:", xhr.responseText);
+			                    } else {
+			                        console.log("Error: " + xhr.statusText);
+			                    }
+			                }
+			            };
+			            xhr.send();
+			        }
+			    </script>
 						<!--end::Action-->
 					</div>
 					<!--end::Input group-->
