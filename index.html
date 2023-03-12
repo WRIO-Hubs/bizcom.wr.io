@@ -1555,23 +1555,22 @@
 							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 						</button>
 						<script>
-						  function runWebhook() {
-						    var email = document.getElementById("emailInput").value;
-						    var url = "https://script.google.com/macros/s/AKfycbw7KfEQMFWiAl5lIIggDpgRH2PVtDTgIDmg-Kj0PBVlCGyzmIdwH2H3WGTnNRuHipVlZQ/exec?gid=0&email=" + email;
-						    fetch(url, {
-									    method: 'POST',
-									    headers: {
-									        'Content-Type': 'text/plain;charset=utf-8'
-									    }})
-						      .then(response => {
-										return ContentService.createTextOutput();
-						        console.log("success:", response);
-						      })
-						      .catch(error => {
-						        console.log("Error:" + error);
-						      });
-						  }
-						</script>
+					    async function runWebhook() {
+					      var email = document.getElementById("emailInput").value;
+					      var url = "https://script.google.com/macros/s/AKfycbw7KfEQMFWiAl5lIIggDpgRH2PVtDTgIDmg-Kj0PBVlCGyzmIdwH2H3WGTnNRuHipVlZQ/exec?gid=0&email=" + email;
+					      try {
+					        const response = await fetch(url, {
+					          method: 'POST',
+					          headers: {
+					            'Content-Type': 'text/plain;charset=utf-8'
+					          }
+					        });
+					        console.log("success:", response);
+					      } catch (error) {
+					        console.log("Error:" + error);
+					      }
+					    }
+					  </script>
 						<!--end::Action-->
 					</div>
 					<!--end::Input group-->
