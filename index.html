@@ -1545,36 +1545,37 @@
 				<form class="form fv-row" id="kt_coming_soon_form">
 					<!--begin::Input group-->
 					<div class="d-flex flex-center">
-						<!--begin::Input-->
-						<input id="emailInput" class="form-control form-control-lg form-control-solid w-md-250px m-2" type="text" name="email" placeholder="Email Address" autocomplete="off" />
-						<!--end::Input-->
-						<!--begin::Action-->
-						<button type="button" onclick="runWebhook()" id="kt_coming_soon_submit" class="btn btn-lg btn-primary fw-bold m-2 text-nowrap">
-							<span class="indicator-label">Notify me</span>
-							<span class="indicator-progress">Please wait...
-							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-						</button>
-						<script>
-			        function runWebhook() {
-			            var email = document.getElementById("emailInput").value;
-			            var url = "https://tinyurl.com/mr3dbcvs?gid=0&email=" + email; //use https://tinyurl.com to minify google macro script url and avoid error with adblock filters
-			            var xhr = new XMLHttpRequest();
-			            xhr.open("POST", url, true);
-			            xhr.setRequestHeader("Content-Type", "text/plain;charset=utf-8");
-			            xhr.onreadystatechange = function() {
-			                if (xhr.readyState === 4) {
-			                    if (xhr.status === 200) {
-			                        console.log("success:", xhr.responseText);
-			                    } else {
-			                        console.log("Error: " + xhr.statusText);
-			                    }
-			                }
-			            };
-			            xhr.send();
-			        }
-			    </script>
-						<!--end::Action-->
-					</div>
+  <!--begin::Input-->
+  <input id="emailInput" class="form-control form-control-lg form-control-solid w-md-250px m-2" type="text" name="email" placeholder="Email Address" autocomplete="off" />
+  <!--end::Input-->
+  <!--begin::Action-->
+  <button type="button" onclick="runWebhook()" id="kt_coming_soon_submit" class="btn btn-lg btn-primary fw-bold m-2 text-nowrap">
+    <span class="indicator-label">Notify me</span>
+    <span class="indicator-progress">Please wait...
+    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+  </button>
+  <script>
+    function runWebhook() {
+      var email = document.getElementById("emailInput").value;
+      var url = "https://script.google.com/macros/s/AKfycbw7KfEQMFWiAl5lIIggDpgRH2PVtDTgIDmg-Kj0PBVlCGyzmIdwH2H3WGTnNRuHipVlZQ/exec";
+      var params = "gid=0&email=" + email;
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log("success:", xhr.responseText);
+          } else {
+            console.log("Error:" + xhr.statusText);
+          }
+        }
+      };
+      xhr.send(params);
+    }
+  </script>
+  <!--end::Action-->
+</div>
 					<!--end::Input group-->
 				</form>
 				<!--end::Form-->
