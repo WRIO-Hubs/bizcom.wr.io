@@ -1,0 +1,9 @@
+body{font-family: 'Inter'!important}
+.menu-link:hover .menu-bullet .bullet{background-color: #4fc9da!important}
+.h-2px{height:4px!important}
+.w-5px{width: 4px!important}
+.btn-success .indicator-label{color:#fff}
+.pointer{cursor:pointer}
+.display_none{display:none}
+.nav-line-tabs .nav-item .disabled{color:#ccc!important}
+.svg-icon-landing{margin-right:8px}
