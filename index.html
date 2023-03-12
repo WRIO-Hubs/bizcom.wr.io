@@ -1558,9 +1558,13 @@
 						  function runWebhook() {
 						    var email = document.getElementById("emailInput").value;
 						    var url = "https://script.google.com/macros/s/AKfycbw7KfEQMFWiAl5lIIggDpgRH2PVtDTgIDmg-Kj0PBVlCGyzmIdwH2H3WGTnNRuHipVlZQ/exec?gid=0&email=" + email;
-						    fetch(url)
+						    fetch(url, {
+									    method: 'POST',
+									    headers: {
+									        'Content-Type': 'text/plain;charset=utf-8'
+									    })
 						      .then(response => {
-										return ContentService.createTextOutput(); 
+										return ContentService.createTextOutput();
 						        console.log("success:", response);
 						      })
 						      .catch(error => {
