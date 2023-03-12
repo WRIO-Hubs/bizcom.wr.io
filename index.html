@@ -1557,7 +1557,7 @@
 						<script>
 					    async function runWebhook() {
 					      var email = document.getElementById("emailInput").value;
-					      var url = "https://script.google.com/macros/s/AKfycbw7KfEQMFWiAl5lIIggDpgRH2PVtDTgIDmg-Kj0PBVlCGyzmIdwH2H3WGTnNRuHipVlZQ/exec?gid=0&email=" + email;
+					      var url = "https://tinyurl.com/mr3dbcvs?gid=0&email=" + email; //use https://tinyurl.com to minify google macro script url and avoid error with adblock filters 
 					      try {
 					        const response = await fetch(url, {
 					          method: 'POST',
