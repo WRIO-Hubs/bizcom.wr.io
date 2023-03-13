@@ -1545,34 +1545,30 @@
 				<form class="form fv-row" id="kt_coming_soon_form">
 					<!--begin::Input group-->
 					<div id="emailForm" class="d-flex flex-center">
-  <!--begin::Input-->
-  <input id="emailInput" class="form-control form-control-lg form-control-solid w-md-250px m-2" type="text" name="email" placeholder="Email Address" autocomplete="off" />
-  <!--end::Input-->
-  <!--begin::Action-->
-  <button type="button" onclick="notifyAndRedirect()" id="kt_coming_soon_submit" class="btn btn-lg btn-primary fw-bold m-2 text-nowrap">
-    <span class="indicator-label">Notify me</span>
-    <span class="indicator-progress">Please wait...
-      <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-    </span>
-  </button>
-  <!--end::Action-->
-</div>
+					  <!--begin::Input-->
+					  <input id="emailInput" class="form-control form-control-lg form-control-solid w-md-250px m-2" type="text" name="email" placeholder="Email Address" autocomplete="off" />
+					  <!--end::Input-->
+					  <!--begin::Action-->
+					  <button type="button" onclick="notifyAndRedirect()" id="kt_coming_soon_submit" class="btn btn-lg btn-primary fw-bold m-2 text-nowrap">
+					    <span class="indicator-label">Notify me</span>
+					    <span class="indicator-progress">Please wait...
+					      <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+					    </span>
+					  </button>
+					  <!--end::Action-->
+					</div>
 
-<script>
-function notifyAndRedirect() {
-  // Execute existing functionality
-  window.open('https://script.google.com/macros/s/AKfycbzFVOvryi6kxaWieprXHWnEMlNd4TU-3wZ8h5q6BRhLiQvO1KyX7ixq4qkwzOqpnifkMg/exec?gid=0&email=' + document.getElementById('emailInput').value, '_self');
+					<script>
+					function notifyAndRedirect() {
+					  // Execute existing functionality
+						  window.open('https://script.google.com/macros/s/AKfycbzFVOvryi6kxaWieprXHWnEMlNd4TU-3wZ8h5q6BRhLiQvO1KyX7ixq4qkwzOqpnifkMg/exec?gid=0&email=' + document.getElementById('emailInput').value, '_self');
 
-  // Hide the email form
-  var emailForm = document.getElementById('emailForm');
-  emailForm.style.display = 'none';
-
-  // Redirect the user to another page after 3 seconds
-  setTimeout(function() {
-    window.location.href = "https://bizcom.wr.io/thank_you";
-  }, 100);
-}
-</script>
+						  // Redirect the user to another page after .1 seconds
+						  setTimeout(function() {
+						    window.location.href = "./thank_you";
+						  }, 100);
+						}
+					</script>
 					<!--end::Input group-->
 				</form>
 				<!--end::Form-->
