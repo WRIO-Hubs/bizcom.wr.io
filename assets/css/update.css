@@ -7,3 +7,4 @@ body{font-family: 'Inter'!important}
 .display_none{display:none}
 .nav-line-tabs .nav-item .disabled{color:#ccc!important}
 .svg-icon-landing{margin-right:8px}
+.text-align-left .text-gray-600,.text-align-left .text-white{text-align:left!important}
