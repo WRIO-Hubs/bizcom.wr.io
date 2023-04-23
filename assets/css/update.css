@@ -9,3 +9,6 @@ body{font-family: 'Inter'!important}
 .svg-icon-landing{margin-right:8px}
 .text-align-left .text-gray-600,.text-align-left .text-white{text-align:left!important}
 .margin-fix svg{margin-top:-3px}
+.form .invalid-feedback{color:#fff!important}
+.course .fs-5{font-size:1.5rem!important}
+.landing-header .menu .menu-link.active{color:#4fc9da;background-color:rgba(239,242,245,.4)}
