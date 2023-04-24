@@ -12,3 +12,4 @@ body{font-family: 'Inter'!important}
 .form .invalid-feedback{color:#fff!important}
 .course .fs-5{font-size:1.5rem!important}
 .landing-header .menu .menu-link.active{color:#4fc9da;background-color:rgba(239,242,245,.4)}
+.card .card-body img.position-absolute{z-index:-1!important}
